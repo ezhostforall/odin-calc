@@ -15,10 +15,6 @@ buttons.forEach(button => {
         } else if (buttonValue === 'DEL') {
             del();
         } else if (buttonValue === '=') {
-            if (currentInput === "Error") {
-                clear();
-                return;
-            }
             if (operator && operand1 !== null) {
                 runningTotal = operate(operator, operand1, parseFloat(currentInput));
                 currentInput = Number.isInteger(runningTotal) ? runningTotal : runningTotal.toFixed(4);
@@ -27,6 +23,7 @@ buttons.forEach(button => {
                 operand1 = null;
             }
         } else if (['+', '-', '*', '/'].includes(buttonValue)) {
+            if (operator && currentInput === '') return;
             if (currentInput !== '') {
                 if (operator && operand1 !== null) {
                     operand1 = operate(operator, operand1, parseFloat(currentInput));
