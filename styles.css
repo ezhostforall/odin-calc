@@ -1,0 +1,95 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0e0e0;
+}
+
+.calculator {
+    width: 250px;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 15px #bebebe, -7px -7px 15px #ffffff;
+}
+
+#display {
+    width: 90%;
+    height: 50px;
+    padding: 10px 5%;
+    font-size: 24px;
+    text-align: right;
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+    transition: all 0.2s ease;
+}
+
+.btn:active {
+    box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+}
+
+.btn.operator {
+    background-color: #ff9500;
+    color: #ffffff;
+    box-shadow: 3px 3px 6px #d17b00, -3px -3px 6px #ffad00;
+}
+
+.btn.clear {
+    background-color: #ff3b30;
+    color: #ffffff;
+    box-shadow: 3px 3px 6px #d12a20, -3px -3px 6px #ff4b40;
+}
+
+.btn.equals {
+    background-color: #007aff;
+    color: #ffffff;
+    box-shadow: 3px 3px 6px #005bb5, -3px -3px 6px #009aff;
+}
+
+.btn.zero {
+    grid-column: span 2;
+}
