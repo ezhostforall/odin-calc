@@ -15,9 +15,14 @@ buttons.forEach(button => {
         } else if (buttonValue === 'DEL') {
             del();
         } else if (buttonValue === '=') {
+            if (currentInput === "Error") {
+                clear();
+                return;
+            }
             if (operator && operand1 !== null) {
                 runningTotal = operate(operator, operand1, parseFloat(currentInput));
-                currentInput = runningTotal.toFixed(4);
+                currentInput = Number.isInteger(runningTotal) ? runningTotal : runningTotal.toFixed(4);
+                display.value = currentInput;
                 operator = null;
                 operand1 = null;
             }
